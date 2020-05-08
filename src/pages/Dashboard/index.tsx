@@ -9,6 +9,7 @@ import api from '../../services/api';
 import Header from '../../components/Header';
 
 import formatValue from '../../utils/formatValue';
+import formatDate from '../../utils/formatDate';
 
 import { Container, CardContainer, Card, TableContainer } from './styles';
 
@@ -44,6 +45,7 @@ const Dashboard: React.FC = () => {
             transaction.type === 'outcome'
               ? `- ${formatValue(transaction.value)}`
               : formatValue(transaction.value),
+          formattedDate: formatDate(transaction.created_at),
         })),
       );
       setBalance(data.balance);
@@ -105,7 +107,7 @@ const Dashboard: React.FC = () => {
                     {transaction.formattedValue}
                   </td>
                   <td>{transaction.category.title}</td>
-                  <td>{transaction.created_at}</td>
+                  <td>{transaction.formattedDate}</td>
                 </tr>
               ))}
             </tbody>
