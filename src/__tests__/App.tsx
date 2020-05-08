@@ -180,17 +180,17 @@ describe('Dashboard', () => {
     expect(getByText('Hosting')).toBeTruthy();
   });
 
-  // it('should be able to navigate to the import page', async () => {
-  //   const { getByText } = render(<App />);
+  it('should be able to navigate to the import page', async () => {
+    const { getByText } = render(<App />);
 
-  //   await actWait(500);
+    await actWait(500);
 
-  //   fireEvent.click(getByText('Importar'));
+    fireEvent.click(getByText('Importar'));
 
-  //   await actWait();
+    await actWait();
 
-  //   expect(window.location.pathname).toEqual('/import');
-  // });
+    expect(window.location.pathname).toEqual('/import');
+  });
 
   // test('should be able to upload a file', async () => {
   //   const { getByText, getByTestId } = render(<App />);
